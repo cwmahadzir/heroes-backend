@@ -22,7 +22,7 @@ public class HeroController {
             new Hero(3, "Pieter"));
 
     @GetMapping
-    @RolesAllowed("heroes-user")
+    @RolesAllowed({ "heroes-user", "heroes-admin" })
     public List<Hero> heroes() {
         return someHeroes;
     }
